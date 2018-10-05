@@ -1,0 +1,17 @@
+{
+"manifest_version": 2,
+    "name": "Solid Citizen Internet Enhancer",
+    "description": "Turn your weak browsing experience into a solid one.",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
