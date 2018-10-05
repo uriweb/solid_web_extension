@@ -21,24 +21,24 @@ for (var i = 0; i < elements.length; i++) {
 			//@todo: handle comparative and superlative
 			
 			// solidify
-			r = new RegExp("\\b" + solidAdjectives.join("|") + "\\b", "gi");
-			replacedText = text.replace(r, function(match, offset, string) {
+			r = new RegExp("\\b(" + solidAdjectives.join("|") + ")\\b", "gi");
+			replacedText = text.replace(r, function(match, r1, offset, string) {
 				var replacement = "solid";
-				return preserveCase(match, offset, string, replacement);
+				return preserveCase(r1, offset, string, replacement);
 			});
 
 			// exquisinate
-			r = new RegExp("\\b" + exquisiteAdjectives.join("|") + "\\b", "gi");
-			replacedText = replacedText.replace(r, function(match, offset, string) {
+			r = new RegExp("\\b(" + exquisiteAdjectives.join("|") + ")\\b", "gi");
+			replacedText = replacedText.replace(r, function(match, r1, offset, string) {
 				var replacement = "exquisite";
-				return preserveCase(match, offset, string, replacement);
+				return preserveCase(r1, offset, string, replacement);
 			});
 
 			// weaken
-			r = new RegExp("\\b" + exquisiteAdjectives.join("|") + "\\b", "gi");
-			replacedText = replacedText.replace(r, function(match, offset, string) {
+			r = new RegExp("\\b(" + exquisiteAdjectives.join("|") + ")\\b", "gi");
+			replacedText = replacedText.replace(r, function(match, r1, offset, string) {
 				var replacement = "weak";
-				return preserveCase(match, offset, string, replacement);
+				return preserveCase(r1, offset, string, replacement);
 			});
 
 
