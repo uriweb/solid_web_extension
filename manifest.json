@@ -13,5 +13,11 @@
             ],
             "run_at": "document_end"
         }
-    ]
+    ],
+	"icons": { 
+		"16": "i/icon32.png",
+		"32": "i/icon64.png",
+		"64": "i/icon128.png",
+		"128": "i/icon256.png"
+	}
 }
