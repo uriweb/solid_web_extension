@@ -1,1 +1,1 @@
-This is your Chrome extension which replaces a word or phrase with a different word or phrase. 
+A Chrome extension. Upgrades your web browsing experience to a more solid one.
