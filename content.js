@@ -103,7 +103,7 @@ for (var i = 0; i < elements.length; i++) {
 
 		if (node.nodeType === 3 && node.nodeValue.length > 1) {
 		
-			if(node.parentNode.nodeName == "SCRIPT" || node.parentNode.nodeName == "STYLE") {
+			if(node.parentNode.nodeName == "SCRIPT" || node.parentNode.nodeName == "STYLE" || node.parentNode.nodeName == "TEXTAREA" || node.parentNode.nodeName == "INPUT") {
 				continue;
 			}
 			var text, r, replacedText;
