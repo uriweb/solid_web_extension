@@ -9,6 +9,7 @@ var weakAdjectives = ["small", "tiny", "dumb", "lame", "poor", "dull", "lacklust
 var locations = ["location", "world", "locus", "planet", "country", "area", "region", "zip code", "site", "field"];
 var locationsPlural = ["locations", "worlds", "loci", "planets", "countries", "areas", "regions", "zip codes", "sites", "fields"];
 var presentation = ["appearance", "coteur", "dress", "attire"];
+var vista = ["vista", "landscape", "scenery"];
 
 
 /**
@@ -56,6 +57,13 @@ function replaceWords(text) {
 	r = new RegExp("\\b(" + presentation.join("|") + ")\\b", "gi");
 	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
 		var replacement = "presentation";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
+	// presentation
+	r = new RegExp("\\b(" + vista.join("|") + ")\\b", "gi");
+	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
+		var replacement = "viewshed";
 		return preserveCase(r1, offset, string, replacement);
 	});
 }
