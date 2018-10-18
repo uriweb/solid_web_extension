@@ -4,10 +4,8 @@
 var solidAdjectives = ["strong", "best", "big", "great", "good", "major", "distinctive", "active"];
 var exquisiteAdjectives = ["beautiful", "wonderful", "delightful", "exciting", "detailed"];
 var weakAdjectives = ["small", "tiny", "dumb", "lame", "poor", "dull", "lackluster"];
-
 var locations = ["location", "world", "locus", "planet", "country", "area", "region", "zip code", "site"];
 var presentation = ["appearance", "coteur", "dress", "attire"];
-
 
 
 /**
