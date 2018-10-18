@@ -4,7 +4,10 @@
 var solidAdjectives = ["strong", "best", "big", "great", "good", "major", "distinctive", "active"];
 var exquisiteAdjectives = ["beautiful", "wonderful", "delightful", "exciting", "detailed"];
 var weakAdjectives = ["small", "tiny", "dumb", "lame", "poor", "dull", "lackluster"];
+
+// @todo: automate plurals
 var locations = ["location", "world", "locus", "planet", "country", "area", "region", "zip code", "site"];
+var locationsPlural = ["locations", "worlds", "loci", "planets", "countries", "areas", "regions", "zip codes", "sites"];
 var presentation = ["appearance", "coteur", "dress", "attire"];
 
 
@@ -41,6 +44,11 @@ function replaceWords(text) {
 	r = new RegExp("\\b(" + locations.join("|") + ")\\b", "gi");
 	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
 		var replacement = "sector";
+		return preserveCase(r1, offset, string, replacement);
+	});
+	r = new RegExp("\\b(" + locationsPlural.join("|") + ")\\b", "gi");
+	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
+		var replacement = "sectors";
 		return preserveCase(r1, offset, string, replacement);
 	});
 
@@ -93,11 +101,19 @@ for (var i = 0; i < elements.length; i++) {
 	for (var j = 0; j < element.childNodes.length; j++) {
 		var node = element.childNodes[j];
 
-		if (node.nodeType === 3) {
+		if (node.nodeType === 3 && node.nodeValue.length > 1) {
+		
+			if(node.parentNode.nodeName == "SCRIPT" || node.parentNode.nodeName == "STYLE") {
+				continue;
+			}
 			var text, r, replacedText;
 			
 			// do replacements
 			text = replaceWords(node.nodeValue);
+// 			if(text != node.nodeValue) {
+// 				console.log(node.nodeValue);
+// 				console.log(node.nodeName);
+// 			}
 
 			if (replacedText !== text) {
 				element.replaceChild(document.createTextNode(replacedText), node);
