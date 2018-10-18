@@ -60,7 +60,7 @@ function replaceWords(text) {
 		return preserveCase(r1, offset, string, replacement);
 	});
 
-	// presentation
+	// viewshed
 	r = new RegExp("\\b(" + vista.join("|") + ")\\b", "gi");
 	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
 		var replacement = "viewshed";
