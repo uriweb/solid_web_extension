@@ -5,6 +5,10 @@ var solidAdjectives = ["strong", "best", "big", "great", "good", "major", "disti
 var exquisiteAdjectives = ["beautiful", "wonderful", "delightful", "exciting", "detailed"];
 var weakAdjectives = ["small", "tiny", "dumb", "lame", "poor", "dull", "lackluster"];
 
+var locations = ["location", "world", "locus", "planet", "country", "area", "region", "zip code", "site"];
+var presentation = ["appearance", "coteur", "dress", "attire"];
+
+
 
 /**
  * Do the replacements
@@ -32,6 +36,20 @@ function replaceWords(text) {
 	r = new RegExp("\\b(" + exquisiteAdjectives.join("|") + ")\\b", "gi");
 	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
 		var replacement = "weak";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
+	// sectorize
+	r = new RegExp("\\b(" + locations.join("|") + ")\\b", "gi");
+	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
+		var replacement = "sector";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
+	// presentation
+	r = new RegExp("\\b(" + presentation.join("|") + ")\\b", "gi");
+	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
+		var replacement = "presentation";
 		return preserveCase(r1, offset, string, replacement);
 	});
 }
