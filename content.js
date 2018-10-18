@@ -6,8 +6,8 @@ var exquisiteAdjectives = ["beautiful", "wonderful", "delightful", "exciting", "
 var weakAdjectives = ["small", "tiny", "dumb", "lame", "poor", "dull", "lackluster"];
 
 // @todo: automate plurals
-var locations = ["location", "world", "locus", "planet", "country", "area", "region", "zip code", "site"];
-var locationsPlural = ["locations", "worlds", "loci", "planets", "countries", "areas", "regions", "zip codes", "sites"];
+var locations = ["location", "world", "locus", "planet", "country", "area", "region", "zip code", "site", "field"];
+var locationsPlural = ["locations", "worlds", "loci", "planets", "countries", "areas", "regions", "zip codes", "sites", "fields"];
 var presentation = ["appearance", "coteur", "dress", "attire"];
 
 
