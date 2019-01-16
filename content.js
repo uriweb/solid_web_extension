@@ -1,28 +1,62 @@
 /**
  * set us up some words to updgrade
  */
-var solidAdjectives = ["strong", "best", "big", "great", "good", "major", "distinctive", "active"];
-var exquisiteAdjectives = ["beautiful", "wonderful", "delightful", "exciting", "detailed"];
-var weakAdjectives = ["small", "tiny", "dumb", "lame", "poor", "dull", "lackluster"];
+var theReplacements = [];
+theReplacements.push({
+	"find": ["strong", "best", "big", "great", "good", "major", "distinctive", "active"],
+	"replace": "solid"	
+});
+theReplacements.push({
+	"find": ["beautiful", "wonderful", "delightful", "exciting", "detailed"],
+	"replace": "exquisite"	
+});
+theReplacements.push({
+	"find": ["small", "tiny", "dumb", "lame", "poor", "dull", "lackluster"],
+	"replace": "weak"
+});
+theReplacements.push({
+	"find": ["location", "world", "locus", "planet", "country", "area", "region", "zip code", "site", "field"],
+	"replace": "sector"	
+});
+theReplacements.push({
+	"find": ["locations", "worlds", "loci", "planets", "countries", "areas", "regions", "zip codes", "sites", "fields"],
+	"replace": "sectors"	
+});
+theReplacements.push({
+	"find": ["appearance", "coteur", "dress", "attire"],
+	"replace": "presentation"	
+});
+theReplacements.push({
+	"find": ["vista", "landscape", "scenery"],
+	"replace": "view shed"	
+});
+theReplacements.push({
+	"find": ["iphone", "ipad", "telephone", "laptop", "laptops", "computer", "computers", "phones", "phone"],
+	"replace": "technicals"	
+});
+theReplacements.push({
+	"find": ["snacks", "lunch", "breakfast", "dinner"],
+	"replace": "chips"	
+});
+theReplacements.push({
+	"find": ["person", "man", "woman"],
+	"replace": "hard mother"	
+});
+theReplacements.push({
+	"find": ["people", "men", "women"],
+	"replace": "hard mothers"	
+});
+theReplacements.push({
+	"find": ["false", "fake", "terrible", "bad", "liar", "disingenuous"],
+	"replace": "phony"	
+});
+theReplacements.push({
+	"find": ["status", "condition"],
+	"replace": "situation"	
+});
 
-// @todo: automate plurals
-var locations = ["location", "world", "locus", "planet", "country", "area", "region", "zip code", "site", "field"];
-var locationsPlural = ["locations", "worlds", "loci", "planets", "countries", "areas", "regions", "zip codes", "sites", "fields"];
-var presentation = ["appearance", "coteur", "dress", "attire"];
-var vista = ["vista", "landscape", "scenery"];
-
-var technicals = ["iphone", "ipad", "telephone", "laptop", "laptops", "computer", "computers", "phones", "phone"];
-
-var chips = ["snacks", "lunch", "breakfast", "dinner"];
-
-var hardMother = ["person", "man", "woman"];
-var hardMothers = ["people", "men", "women"];
-
-var phony = ["false", "fake", "terrible", "bad", "liar", "disingenuous"];
-var situation = ["status", "condition"];
 
 
-// @todo: replace ! with ", Jerry!"
 
 
 function Jerrify(text) {
@@ -33,99 +67,21 @@ function Jerrify(text) {
  * Do the replacements
  * @todo: refactor into more sensible chunks
  * @todo: handle comparative and superlative cases
+ * @todo: automate plurals
  *
  */
 function replaceWords(text) {
+
+	var r; 
+	replacedText = text;
 	
-	// technify
-	r = new RegExp("\\b(" + technicals.join("|") + ")\\b", "gi");
-	replacedText = text.replace(r, function(match, r1, offset, string) {
-		var replacement = "technicals";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// sitchitize
-	r = new RegExp("\\b(" + situation.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "situation";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// phonifate
-	r = new RegExp("\\b(" + phony.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "phony";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// chippelize
-	r = new RegExp("\\b(" + chips.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "chips";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// solidify
-	r = new RegExp("\\b(" + solidAdjectives.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "solid";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// exquisinate
-	r = new RegExp("\\b(" + exquisiteAdjectives.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "exquisite";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// weaken
-	r = new RegExp("\\b(" + exquisiteAdjectives.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "weak";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// sectorize
-	r = new RegExp("\\b(" + locations.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "sector";
-		return preserveCase(r1, offset, string, replacement);
-	});
-	r = new RegExp("\\b(" + locationsPlural.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "sectors";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// harden
-	r = new RegExp("\\b(" + hardMother.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "hard mother";
-		return preserveCase(r1, offset, string, replacement);
-	});
-	r = new RegExp("\\b(" + hardMothers.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "hard mothers";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// presentation
-	r = new RegExp("\\b(" + presentation.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "presentation";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// viewshed
-	r = new RegExp("\\b(" + vista.join("|") + ")\\b", "gi");
-	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-		var replacement = "viewshed";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-
-
+	for(var i=0; i<theReplacements.length; i++) {
+		r = new RegExp("\\b(" + theReplacements[i].find.join("|") + ")\\b", "gi");
+		replacedText = replacedText.replace(r, function(match, r1, offset, string) {
+			return preserveCase(r1, offset, string, theReplacements[i].replace);
+		});
+	}
+	
 }
 
 /**
