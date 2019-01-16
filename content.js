@@ -11,6 +11,18 @@ var locationsPlural = ["locations", "worlds", "loci", "planets", "countries", "a
 var presentation = ["appearance", "coteur", "dress", "attire"];
 var vista = ["vista", "landscape", "scenery"];
 
+var technicals = ["iphone", "ipad", "telephone", "laptop", "computer"];
+
+var chips = ["snacks", "lunch", "breakfast", "dinner"];
+
+var hardMother = ["person", "man", "woman"];
+var hardMothers = ["people", "men", "women"];
+
+var phony = ["false", "fake", "terrible", "bad", "liar", "disingenuous"];
+var situation = ["status", "condition"];
+
+
+// @todo: replace ! with ", Jerry!"
 
 /**
  * Do the replacements
@@ -20,6 +32,41 @@ var vista = ["vista", "landscape", "scenery"];
  */
 function replaceWords(text) {
 	
+	// sitchitize
+	r = new RegExp("\\b(" + situation.join("|") + ")\\b", "gi");
+	replacedText = text.replace(r, function(match, r1, offset, string) {
+		var replacement = "situation";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
+	// phonifate
+	r = new RegExp("\\b(" + phony.join("|") + ")\\b", "gi");
+	replacedText = text.replace(r, function(match, r1, offset, string) {
+		var replacement = "phony";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
+	// phonifate
+	r = new RegExp("\\b(" + phony.join("|") + ")\\b", "gi");
+	replacedText = text.replace(r, function(match, r1, offset, string) {
+		var replacement = "phony";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
+	// chippelize
+	r = new RegExp("\\b(" + chips.join("|") + ")\\b", "gi");
+	replacedText = text.replace(r, function(match, r1, offset, string) {
+		var replacement = "chips";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
+	// technify
+	r = new RegExp("\\b(" + technicals.join("|") + ")\\b", "gi");
+	replacedText = text.replace(r, function(match, r1, offset, string) {
+		var replacement = "technicals";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
 	// solidify
 	r = new RegExp("\\b(" + solidAdjectives.join("|") + ")\\b", "gi");
 	replacedText = text.replace(r, function(match, r1, offset, string) {
@@ -50,6 +97,18 @@ function replaceWords(text) {
 	r = new RegExp("\\b(" + locationsPlural.join("|") + ")\\b", "gi");
 	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
 		var replacement = "sectors";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
+	// harden
+	r = new RegExp("\\b(" + hardMother.join("|") + ")\\b", "gi");
+	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
+		var replacement = "hard mother";
+		return preserveCase(r1, offset, string, replacement);
+	});
+	r = new RegExp("\\b(" + hardMothers.join("|") + ")\\b", "gi");
+	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
+		var replacement = "hard mothers";
 		return preserveCase(r1, offset, string, replacement);
 	});
 
