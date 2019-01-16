@@ -24,6 +24,11 @@ var situation = ["status", "condition"];
 
 // @todo: replace ! with ", Jerry!"
 
+
+function Jerrify(text) {
+	var r = /!$/g;
+	return text.replace( r, ", Jerry!" );	
+}
 /**
  * Do the replacements
  * @todo: refactor into more sensible chunks
@@ -125,6 +130,9 @@ function replaceWords(text) {
 		var replacement = "viewshed";
 		return preserveCase(r1, offset, string, replacement);
 	});
+
+
+
 }
 
 /**
@@ -136,19 +144,21 @@ function replaceWords(text) {
  */
 function preserveCase(match, offset, string, replacement) {
 
-	// check if the first letter is capitalized
-	var f = match.charCodeAt(0);
-	if( f >= 65 && f < 65+26 ) {
-		replacement = replacement.charAt(0).toUpperCase() + replacement.substr(1);
-	}
+	if ( typeof match === 'string') {
+		// check if the first letter is capitalized
+		var f = match.charCodeAt(0);
+	
+		if( f >= 65 && f < 65+26 ) {
+			replacement = replacement.charAt(0).toUpperCase() + replacement.substr(1);
+		}
 
-	// check if the last letter is capitalized, if so, let's call it all caps
-	var f = match.charCodeAt(match.length-1);
-	if( f >= 65 && f < 65+26 ) {
-		replacement = replacement.toUpperCase();
+		// check if the last letter is capitalized, if so, let's call it all caps
+		var f = match.charCodeAt(match.length-1);
+		if( f >= 65 && f < 65+26 ) {
+			replacement = replacement.toUpperCase();
+		}
+	
 	}
-	
-	
 	return replacement;
 }
 
@@ -176,7 +186,7 @@ for (var i = 0; i < elements.length; i++) {
 			var text, r, replacedText;
 			
 			// do replacements
-			text = replaceWords(node.nodeValue);
+			text = replaceWords( Jerrify(node.nodeValue) );
 // 			if(text != node.nodeValue) {
 // 				console.log(node.nodeValue);
 // 				console.log(node.nodeName);
