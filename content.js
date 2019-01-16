@@ -11,7 +11,7 @@ var locationsPlural = ["locations", "worlds", "loci", "planets", "countries", "a
 var presentation = ["appearance", "coteur", "dress", "attire"];
 var vista = ["vista", "landscape", "scenery"];
 
-var technicals = ["iphone", "ipad", "telephone", "laptop", "computer"];
+var technicals = ["iphone", "ipad", "telephone", "laptop", "laptops", "computer", "computers", "phones", "phone"];
 
 var chips = ["snacks", "lunch", "breakfast", "dinner"];
 
@@ -37,34 +37,6 @@ function Jerrify(text) {
  */
 function replaceWords(text) {
 	
-	// sitchitize
-	r = new RegExp("\\b(" + situation.join("|") + ")\\b", "gi");
-	replacedText = text.replace(r, function(match, r1, offset, string) {
-		var replacement = "situation";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// phonifate
-	r = new RegExp("\\b(" + phony.join("|") + ")\\b", "gi");
-	replacedText = text.replace(r, function(match, r1, offset, string) {
-		var replacement = "phony";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// phonifate
-	r = new RegExp("\\b(" + phony.join("|") + ")\\b", "gi");
-	replacedText = text.replace(r, function(match, r1, offset, string) {
-		var replacement = "phony";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
-	// chippelize
-	r = new RegExp("\\b(" + chips.join("|") + ")\\b", "gi");
-	replacedText = text.replace(r, function(match, r1, offset, string) {
-		var replacement = "chips";
-		return preserveCase(r1, offset, string, replacement);
-	});
-
 	// technify
 	r = new RegExp("\\b(" + technicals.join("|") + ")\\b", "gi");
 	replacedText = text.replace(r, function(match, r1, offset, string) {
@@ -72,9 +44,30 @@ function replaceWords(text) {
 		return preserveCase(r1, offset, string, replacement);
 	});
 
+	// sitchitize
+	r = new RegExp("\\b(" + situation.join("|") + ")\\b", "gi");
+	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
+		var replacement = "situation";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
+	// phonifate
+	r = new RegExp("\\b(" + phony.join("|") + ")\\b", "gi");
+	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
+		var replacement = "phony";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
+	// chippelize
+	r = new RegExp("\\b(" + chips.join("|") + ")\\b", "gi");
+	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
+		var replacement = "chips";
+		return preserveCase(r1, offset, string, replacement);
+	});
+
 	// solidify
 	r = new RegExp("\\b(" + solidAdjectives.join("|") + ")\\b", "gi");
-	replacedText = text.replace(r, function(match, r1, offset, string) {
+	replacedText = replacedText.replace(r, function(match, r1, offset, string) {
 		var replacement = "solid";
 		return preserveCase(r1, offset, string, replacement);
 	});
