@@ -80,6 +80,10 @@ theReplacements.push({
 	"find": ["makerspace", "maker space"],
 	"replace": "work shop"	
 });
+theReplacements.push({
+	"find": ["greetings"],
+	"replace": "pleasantries"	
+});
 
 // passion
 // salutation
