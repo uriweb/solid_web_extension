@@ -76,6 +76,17 @@ theReplacements.push({
 	"replace": "Big School"	
 });
 
+theReplacements.push({
+	"find": ["makerspace", "maker space"],
+	"replace": "work shop"	
+});
+
+// passion
+// salutation
+// brutal
+// animal
+// citizen
+// clown
 
 
 
