@@ -47,13 +47,22 @@ theReplacements.push({
 	"replace": ["chips"]	
 });
 theReplacements.push({
-	"find": ["person", "man", "woman", "student"],
+	"find": ["person", "man", "woman"],
 	"replace": ["hard mother", "citizen"]	
 });
 theReplacements.push({
-	"find": ["people", "men", "women", "students"],
+	"find": ["people", "men", "women"],
 	"replace": ["hard mothers", "citizens"]
 });
+theReplacements.push({
+	"find": ["student", "user", "visitor"],
+	"replace": ["citizen"]	
+});
+theReplacements.push({
+	"find": ["students", "users", "visitors"],
+	"replace": ["citizens"]
+});
+
 theReplacements.push({
 	"find": ["false", "fake", "terrible", "bad", "liar", "disingenuous"],
 	"replace": ["phony"]	
@@ -89,17 +98,25 @@ theReplacements.push({
 	"find": ["grueling", "difficult"],
 	"replace": ["brutal"]	
 });
-
 theReplacements.push({
 	"find": ["vicious", "hard-working", "enthusiastic"],
 	"replace": ["savage"]	
+});
+theReplacements.push({
+	"find": ["fried chicken"],
+	"replace": ["bastard chicken"]	
+});
+
+theReplacements.push({
+	"find": ["professional", "excellent"],
+	"replace": ["almost professional"]	
 });
 
 // passion
 // salutation
 // animal
-// citizen
 // clown
+// citizen -> ?
 
 
 
