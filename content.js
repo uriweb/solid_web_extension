@@ -85,13 +85,21 @@ theReplacements.push({
 	"replace": ["pleasantries"]	
 });
 
+theReplacements.push({
+	"find": ["grueling", "difficult"],
+	"replace": ["brutal"]	
+});
+
+theReplacements.push({
+	"find": ["vicious", "hard-working", "enthusiastic"],
+	"replace": ["savage"]	
+});
+
 // passion
 // salutation
-// brutal
 // animal
 // citizen
 // clown
-// savage
 
 
 
