@@ -7,7 +7,7 @@ theReplacements.push({
 	"replace": "solid"	
 });
 theReplacements.push({
-	"find": ["beautiful", "wonderful", "delightful", "exciting", "detailed"],
+	"find": ["beautiful", "wonderful", "delightful", "exciting", "detailed", "charming"],
 	"replace": "exquisite"	
 });
 theReplacements.push({
@@ -27,11 +27,15 @@ theReplacements.push({
 	"replace": "presentation"	
 });
 theReplacements.push({
-	"find": ["vista", "landscape", "scenery"],
+	"find": ["vista", "landscape", "scenery", "countryside"],
 	"replace": "view shed"	
 });
 theReplacements.push({
-	"find": ["iphone", "ipad", "telephone", "laptop", "laptops", "computer", "computers", "phones", "phone"],
+	"find": ["iphone", "ipad", "telephone", "laptop", "computer", "phone"],
+	"replace": "technical"	
+});
+theReplacements.push({
+	"find": ["iphones", "ipads", "telephones", "laptops", "computers", "phones"],
 	"replace": "technicals"	
 });
 theReplacements.push({
@@ -54,7 +58,14 @@ theReplacements.push({
 	"find": ["status", "condition"],
 	"replace": "situation"	
 });
-
+theReplacements.push({
+	"find": ["water bottle", "travel mug", "beaker", "chalice", "goblet", "tumbler"],
+	"replace": "hydration vessel"	
+});
+theReplacements.push({
+	"find": ["water bottles", "travel mugs", "beakers", "chalices", "goblets", "tumblers"],
+	"replace": "hydration vessels"	
+});
 
 
 
