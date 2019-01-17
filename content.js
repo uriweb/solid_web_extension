@@ -3,6 +3,10 @@
  */
 var theReplacements = [];
 theReplacements.push({
+	"find": ["the strongest", "the best", "the biggest", "the greatest"],
+	"replace": "the most solid"	
+});
+theReplacements.push({
 	"find": ["strong", "best", "big", "great", "good", "major", "distinctive", "active"],
 	"replace": "solid"	
 });
