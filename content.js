@@ -4,51 +4,51 @@
 var theReplacements = [];
 theReplacements.push({
 	"find": ["the strongest", "the best", "the biggest", "the greatest"],
-	"replace": "the most solid"	
+	"replace": ["the most solid"]
 });
 theReplacements.push({
 	"find": ["strong", "best", "big", "great", "good", "major", "distinctive", "active"],
-	"replace": "solid"	
+	"replace": ["solid"]	
 });
 theReplacements.push({
 	"find": ["beautiful", "wonderful", "delightful", "exciting", "detailed", "charming"],
-	"replace": "exquisite"	
+	"replace": ["exquisite"]	
 });
 theReplacements.push({
 	"find": ["small", "tiny", "dumb", "lame", "poor", "dull", "lackluster"],
-	"replace": "weak"
+	"replace": ["weak"]
 });
 theReplacements.push({
 	"find": ["location", "world", "locus", "planet", "country", "area", "region", "zip code", "site", "field"],
-	"replace": "sector"	
+	"replace": ["sector"]	
 });
 theReplacements.push({
 	"find": ["locations", "worlds", "loci", "planets", "countries", "areas", "regions", "zip codes", "sites", "fields"],
-	"replace": "sectors"	
+	"replace": ["sectors"]	
 });
 theReplacements.push({
 	"find": ["appearance", "coteur", "dress", "attire"],
-	"replace": "presentation"	
+	"replace": ["presentation"]	
 });
 theReplacements.push({
 	"find": ["vista", "landscape", "scenery", "countryside"],
-	"replace": "view shed"	
+	"replace": ["view shed"]	
 });
 theReplacements.push({
 	"find": ["iphone", "ipad", "telephone", "laptop", "computer", "phone"],
-	"replace": "technical"	
+	"replace": ["technical"]	
 });
 theReplacements.push({
 	"find": ["iphones", "ipads", "telephones", "laptops", "computers", "phones"],
-	"replace": "technicals"	
+	"replace": ["technicals"]	
 });
 theReplacements.push({
 	"find": ["snacks", "lunch", "breakfast", "dinner"],
-	"replace": "chips"	
+	"replace": ["chips"]	
 });
 theReplacements.push({
 	"find": ["person", "man", "woman"],
-	"replace": "hard mother"	
+	"replace": ["hard mother"]	
 });
 theReplacements.push({
 	"find": ["people", "men", "women"],
@@ -56,33 +56,33 @@ theReplacements.push({
 });
 theReplacements.push({
 	"find": ["false", "fake", "terrible", "bad", "liar", "disingenuous"],
-	"replace": "phony"	
+	"replace": ["phony"]	
 });
 theReplacements.push({
 	"find": ["status", "condition"],
-	"replace": "situation"	
+	"replace": ["situation"]	
 });
 theReplacements.push({
 	"find": ["water bottle", "travel mug", "beaker", "chalice", "goblet", "tumbler"],
-	"replace": "hydration vessel"	
+	"replace": ["hydration vessel"]	
 });
 theReplacements.push({
 	"find": ["water bottles", "travel mugs", "beakers", "chalices", "goblets", "tumblers"],
-	"replace": "hydration vessels"	
+	"replace": ["hydration vessels"]	
 });
 
 theReplacements.push({
 	"find": ["university of rhode island"],
-	"replace": "Big School"	
+	"replace": ["Big School"]	
 });
 
 theReplacements.push({
 	"find": ["makerspace", "maker space"],
-	"replace": "work shop"	
+	"replace": ["work shop"]	
 });
 theReplacements.push({
 	"find": ["greetings"],
-	"replace": "pleasantries"	
+	"replace": ["pleasantries"]	
 });
 
 // passion
@@ -113,9 +113,18 @@ function replaceWords(text) {
 	for(var i=0; i<theReplacements.length; i++) {
 		r = new RegExp("\\b(" + theReplacements[i].find.join("|") + ")\\b", "gi");
 		replacedText = replacedText.replace(r, function(match, r1, offset, string) {
-			return preserveCase(r1, offset, string, theReplacements[i].replace);
+			return preserveCase(r1, offset, string, getRandomReplacement( theReplacements[i].replace ) );
 		});
 	}
+	
+}
+
+function getRandomReplacement( words ) {
+	
+	var l = words.length;
+	var n = Math.floor(Math.random() * l) + 0;
+	
+	return words[n];
 	
 }
 
