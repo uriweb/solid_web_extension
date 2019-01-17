@@ -63,7 +63,7 @@ theReplacements.push({
 	"replace": ["situation"]	
 });
 theReplacements.push({
-	"find": ["water bottle", "travel mug", "beaker", "chalice", "goblet", "tumbler"],
+	"find": ["bottle", "water bottle", "travel mug", "beaker", "chalice", "goblet", "tumbler"],
 	"replace": ["hydration vessel"]	
 });
 theReplacements.push({
