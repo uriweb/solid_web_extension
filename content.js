@@ -119,11 +119,12 @@ function replaceWords(text) {
 	
 }
 
+/**
+ * Return a random word from the list of associated replacements
+ */
 function getRandomReplacement( words ) {
-	
-	var l = words.length;
-	var n = Math.floor(Math.random() * l) + 0;
-	
+
+	var n = Math.floor(Math.random() * words.length);
 	return words[n];
 	
 }
