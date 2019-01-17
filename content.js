@@ -67,6 +67,11 @@ theReplacements.push({
 	"replace": "hydration vessels"	
 });
 
+theReplacements.push({
+	"find": ["university of rhode island"],
+	"replace": "Big School"	
+});
+
 
 
 
