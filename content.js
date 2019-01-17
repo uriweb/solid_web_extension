@@ -117,6 +117,7 @@ theReplacements.push({
 // animal
 // clown
 // citizen -> ?
+// man lifter
 
 
 
