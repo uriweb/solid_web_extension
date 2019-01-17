@@ -47,11 +47,11 @@ theReplacements.push({
 	"replace": ["chips"]	
 });
 theReplacements.push({
-	"find": ["person", "man", "woman"],
+	"find": ["person", "man", "woman", "student"],
 	"replace": ["hard mother", "citizen"]	
 });
 theReplacements.push({
-	"find": ["people", "men", "women"],
+	"find": ["people", "men", "women", "students"],
 	"replace": ["hard mothers", "citizens"]
 });
 theReplacements.push({
@@ -85,9 +85,18 @@ theReplacements.push({
 	"replace": ["pleasantries"]	
 });
 
+theReplacements.push({
+	"find": ["grueling", "difficult"],
+	"replace": ["brutal"]	
+});
+
+theReplacements.push({
+	"find": ["vicious", "hard-working", "enthusiastic"],
+	"replace": ["savage"]	
+});
+
 // passion
 // salutation
-// brutal
 // animal
 // citizen
 // clown
