@@ -48,11 +48,11 @@ theReplacements.push({
 });
 theReplacements.push({
 	"find": ["person", "man", "woman"],
-	"replace": ["hard mother"]	
+	"replace": ["hard mother", "citizen"]	
 });
 theReplacements.push({
 	"find": ["people", "men", "women"],
-	"replace": "hard mothers"	
+	"replace": ["hard mothers", "citizens"]
 });
 theReplacements.push({
 	"find": ["false", "fake", "terrible", "bad", "liar", "disingenuous"],
