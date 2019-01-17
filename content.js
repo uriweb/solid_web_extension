@@ -91,6 +91,7 @@ theReplacements.push({
 // animal
 // citizen
 // clown
+// savage
 
 
 
