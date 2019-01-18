@@ -106,19 +106,31 @@ theReplacements.push({
 	"find": ["fried chicken"],
 	"replace": ["bastard chicken"]	
 });
-
 theReplacements.push({
 	"find": ["professional", "excellent"],
 	"replace": ["almost professional"]	
+});
+theReplacements.push({
+	"find": ["stair", "stairs", "ladder", "stepladder", "elevator", "escalator", "gurney", "hydraulic lift", "Genie lift", "strongman" ],
+	"replace": ["manlifter"]	
+});
+theReplacements.push({
+	"find": ["ladders", "stepladders", "elevators", "escalators", "gurneys", "hydraulic lifts", "Genie lifts", "strongmen" ],
+	"replace": ["manlifters"]	
+});
+theReplacements.push({
+	"find": ["citizen"],
+	"replace": ["savage", "animal"]	
+});
+theReplacements.push({
+	"find": ["citizens"],
+	"replace": ["savages", "animals"]	
 });
 
 // passion
 // salutation
 // animal
 // clown
-// citizen -> ?
-// man lifter
-
 
 
 function Jerrify(text) {
