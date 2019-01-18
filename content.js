@@ -71,7 +71,7 @@ theReplacements.push({
 	"replace": ["citizens"]
 });
 theReplacements.push({
-	"find": ["home", "house", "homestead"],
+	"find": ["home", "be home to", "house", "homestead"],
 	"replace": ["shelter"]
 });
 theReplacements.push({
