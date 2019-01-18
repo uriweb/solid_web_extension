@@ -120,16 +120,15 @@ theReplacements.push({
 });
 theReplacements.push({
 	"find": ["citizen"],
-	"replace": ["savage", "animal"]	
+	"replace": ["animal"]	
 });
 theReplacements.push({
 	"find": ["citizens"],
-	"replace": ["savages", "animals"]	
+	"replace": ["animals"]	
 });
 
 // passion
 // salutation
-// animal
 // clown
 
 
