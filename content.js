@@ -3,6 +3,14 @@
  */
 var theReplacements = [];
 theReplacements.push({
+	"find": ["citizen"],
+	"replace": ["animal"]	
+});
+theReplacements.push({
+	"find": ["citizens"],
+	"replace": ["animals"]	
+});
+theReplacements.push({
 	"find": ["the strongest", "the best", "the biggest", "the greatest"],
 	"replace": ["the most solid"]
 });
@@ -62,7 +70,14 @@ theReplacements.push({
 	"find": ["students", "users", "visitors"],
 	"replace": ["citizens"]
 });
-
+theReplacements.push({
+	"find": ["home", "house", "homestead"],
+	"replace": ["shelter"]
+});
+theReplacements.push({
+	"find": ["homeless"],
+	"replace": ["unsheltered"]
+});
 theReplacements.push({
 	"find": ["false", "fake", "terrible", "bad", "liar", "disingenuous"],
 	"replace": ["phony"]	
@@ -117,14 +132,6 @@ theReplacements.push({
 theReplacements.push({
 	"find": ["ladders", "stepladders", "elevators", "escalators", "gurneys", "hydraulic lifts", "Genie lifts", "strongmen" ],
 	"replace": ["manlifters"]	
-});
-theReplacements.push({
-	"find": ["citizen"],
-	"replace": ["animal"]	
-});
-theReplacements.push({
-	"find": ["citizens"],
-	"replace": ["animals"]	
 });
 
 // passion
