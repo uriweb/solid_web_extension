@@ -133,6 +133,10 @@ theReplacements.push({
 	"find": ["ladders", "stepladders", "elevators", "escalators", "gurneys", "hydraulic lifts", "Genie lifts", "strongmen" ],
 	"replace": ["manlifters"]	
 });
+theReplacements.push({
+	"find": ["images"],
+	"replace": ["imagery"]	
+});
 
 // passion
 // salutation
