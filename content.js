@@ -138,10 +138,15 @@ theReplacements.push({
 	"replace": ["imagery"]	
 });
 
+theReplacements.push({
+	"find": ["remote", "far away"],
+	"replace": ["off-property"]	
+});
+
+
 // passion
 // salutation
 // clown
-// off-property
 // other proximity-related replacements?
 
 
