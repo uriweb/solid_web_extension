@@ -141,6 +141,8 @@ theReplacements.push({
 // passion
 // salutation
 // clown
+// off-property
+// other proximity-related replacements?
 
 
 function Jerrify(text) {
