@@ -142,12 +142,19 @@ theReplacements.push({
 	"find": ["remote", "far away"],
 	"replace": ["off-property"]	
 });
+theReplacements.push({
+	"find": ["on campus"],
+	"replace": ["on property"]	
+});
+theReplacements.push({
+	"find": ["nearby"],
+	"replace": ["close proximity"]	
+});
 
 
 // passion
 // salutation
 // clown
-// other proximity-related replacements?
 
 
 function Jerrify(text) {
